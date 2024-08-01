@@ -2,6 +2,10 @@
   "name": "Auth",
   "description": "Auth module",
   "version": "0.1.0",
+  "github": {
+    "user": "MerapiPanel",
+    "repo": "Auth"
+  },
   "author": "Il4mb",
   "icon": "./icon.svg"
 }
