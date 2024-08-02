@@ -25,7 +25,7 @@ class Session extends __Fragment
     {
 
         $cookie_name = $this->module->getConfig()->get("cookie_name");
-        if (!isset($_COOKIE[$cookie_name]) || !$token = AES::decrypt($_COOKIE[$cookie_name] ?? "")) {
+        if (!isset($_COOKIE[$cookie_name]) || !$token = AES::getInstance()->decrypt($_COOKIE[$cookie_name] ?? "")) {
             return null;
         }
 

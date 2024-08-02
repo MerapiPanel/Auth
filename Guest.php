@@ -97,7 +97,7 @@ class Guest extends __Fragment
                 'data'              => !is_string($session['data']) ? json_encode($session['data']) : $session['data'],
             ])->execute()
         ) {
-            if (!setcookie($cookie_name, AES::encrypt($session['token']), strtotime($session['expire']), "/")) {
+            if (!setcookie($cookie_name, AES::getInstance()->encrypt($session['token']), strtotime($session['expire']), "/")) {
                 throw new Exception("Failed to set cookie");
             }
 

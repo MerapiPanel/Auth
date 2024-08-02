@@ -2,17 +2,11 @@
 
 namespace MerapiPanel\Module\Auth\Controller;
 
-use Google_Client;
 use MerapiPanel\Box;
 use MerapiPanel\Box\Module\__Fragment;
-use MerapiPanel\Utility\AES;
 use MerapiPanel\Views\View;
-use MerapiPanel\Database\DB;
-use MerapiPanel\Utility\Http\Request;
 use MerapiPanel\Utility\Http\Response;
 use MerapiPanel\Utility\Router;
-use PDO;
-use Throwable;
 
 class Guest extends __Fragment
 {
