@@ -14,8 +14,9 @@
         <div class="mt-auto">
 
             <header class="text-center my-5">
-                <div> <img width="150" height="55" class="object-fit-cover" src="{{ 'img/logo.png' | assets }}"
-                        alt="Merapi logo"></div>
+                <div> 
+                    <img width="150" height="55" class="object-fit-cover" src="{{ 'img/logo.png' | assets }}" alt="Merapi logo">
+                </div>
                 <h1 class="fs-3 my-1">Login to your account</h1>
             </header>
 
@@ -23,9 +24,8 @@
 
                 <div class="col-12 col-lg-6 mx-auto">
 
-                    <form action="{{ '/public/api/Auth/login' | url }}" method="post" id="login-form"
-                        class="needs-validation  card card-body shadow-sm border-0" novalidate>
-
+                    <form action="{{'/public/api/Auth/login'|url}}" method="post" id="login-form" class="needs-validation  card card-body shadow-sm border-0" novalidate>
+                        {{csrf_input()}}
                         <div class="form-group mb-3">
                             <label for="email">Email</label>
                             <input class="form-control" placeholder="Enter email address" type="email" name="email"

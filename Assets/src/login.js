@@ -9,6 +9,7 @@ MAuth.payload = {
 
 var delay;
 function submitHandler(e) {
+    const $this = $(this);
     if (delay) clearTimeout(delay);
 
     e.preventDefault();
@@ -43,13 +44,7 @@ function submitHandler(e) {
 
     delay = setTimeout(function () {
 
-        __.http.post(window.location.href, {
-            ...MAuth.payload,
-            ...{
-                email: email,
-                password: password
-            }
-        })
+        __.http.post(window.location.href, new FormData($this[0]))
             .then((response) => {
                 if (response.status && __.cookie.cookie_get("auth")) {
                     window.location.reload();
